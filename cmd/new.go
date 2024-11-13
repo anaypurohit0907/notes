@@ -6,9 +6,10 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"go-cli/data"
+
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
-	"go-cli/data"
 
 	"os"
 )
