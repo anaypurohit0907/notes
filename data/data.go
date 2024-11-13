@@ -2,7 +2,10 @@ package data
 
 import (
 	"database/sql"
+<<<<<<< HEAD
 	"fmt"
+=======
+>>>>>>> f8a8337 (initial commit)
 	_ "github.com/mattn/go-sqlite3"
 	"log"
 )
@@ -65,6 +68,7 @@ func DisplayAllNotes() {
 		var definition string
 		var category string
 		row.Scan(&idNote, &word, &definition, &category)
+<<<<<<< HEAD
 		fmt.Println("[", category, "] : ", word, "—", definition)
 	}
 }
@@ -86,3 +90,8 @@ func SearchAllNotes(word string) {
 	}
 
 }
+=======
+		log.Println("[", category, "] ", word, "—", definition)
+	}
+}
+>>>>>>> f8a8337 (initial commit)
