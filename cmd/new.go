@@ -18,13 +18,10 @@ type promptContent struct {
 	label    string
 }
 
-<<<<<<< HEAD
 var NewEntry string
 var NewCategory string
 var NewDefinition string
 
-=======
->>>>>>> f8a8337 (initial commit)
 // newCmd represents the new command
 var newCmd = &cobra.Command{
 
@@ -70,7 +67,6 @@ func promptGetInput(pc promptContent) string {
 }
 
 func createNewNote() {
-<<<<<<< HEAD
 	if NewEntry != "" && NewCategory != "" && NewDefinition != "" {
 		data.InsertNote(NewEntry, NewDefinition, NewCategory)
 	} else {
@@ -94,25 +90,6 @@ func createNewNote() {
 
 		data.InsertNote(word, definition, category)
 	}
-=======
-	wordPromptContent := promptContent{
-		"Please provide a command or binding you learnt.",
-		"What command would you like to make a note of?",
-	}
-	word := promptGetInput(wordPromptContent)
-
-	definitionPromptContent := promptContent{
-		"Please provide a definition.",
-		fmt.Sprintf("What is the definition of %s?", word),
-	}
-	definition := promptGetInput(definitionPromptContent)
-	categoryPromptContent := promptContent{
-		"Please provide a category.",
-		fmt.Sprintf("What category does %s belong to?", word),
-	}
-	category := promptGetSelect(categoryPromptContent)
-	data.InsertNote(word, definition, category)
->>>>>>> f8a8337 (initial commit)
 }
 
 func promptGetSelect(pc promptContent) string {
@@ -148,13 +125,10 @@ func promptGetSelect(pc promptContent) string {
 func init() {
 	noteCmd.AddCommand(newCmd)
 
-<<<<<<< HEAD
 	newCmd.Flags().StringVarP(&NewEntry, "New", "n", "", "make a new entry enter name of note")
 	newCmd.Flags().StringVarP(&NewCategory, "Category", "c", "", "Category of note")
 	newCmd.Flags().StringVarP(&NewDefinition, "Definition", "d", "", "Definition of note")
 	newCmd.MarkFlagsRequiredTogether("New", "Category", "Definition")
-=======
->>>>>>> f8a8337 (initial commit)
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
