@@ -9,18 +9,27 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var searchword string
+
 // listCmd represents the list command
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "View a list of all the notes you added",
 	Long:  `view a list of all the notes you added`,
 	Run: func(cmd *cobra.Command, args []string) {
-		data.DisplayAllNotes()
+		if searchword != "" {
+			data.SearchAllNotes(searchword)
+
+		} else {
+
+			data.DisplayAllNotes()
+		}
 	},
 }
 
 func init() {
 	noteCmd.AddCommand(listCmd)
+	listCmd.Flags().StringVarP(&searchword, "Search", "s", "", "Search by definition")
 
 	// Here you will define your flags and configuration settings.
 
