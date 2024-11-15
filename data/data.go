@@ -2,6 +2,7 @@ package data
 
 import (
 	"database/sql"
+	"fmt"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
 )
@@ -64,6 +65,24 @@ func DisplayAllNotes() {
 		var definition string
 		var category string
 		row.Scan(&idNote, &word, &definition, &category)
-		log.Println("[", category, "] ", word, "—", definition)
+		fmt.Println("[", category, "] : ", word, "—", definition)
 	}
+}
+func SearchAllNotes(word string) {
+	row, err := db.Query("SELECT * FROM studybuddy WHERE definition LIKE '%" + word + "%'")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer row.Close()
+	for row.Next() {
+		var idNote int
+		var word string
+		var definition string
+		var category string
+		row.Scan(&idNote, &word, &definition, &category)
+		fmt.Println("[", category, "] : ", word, "—", definition)
+	}
+
 }
