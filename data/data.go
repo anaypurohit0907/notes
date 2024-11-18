@@ -87,3 +87,19 @@ func SearchAllNotes(word string) {
 	}
 
 }
+
+/*func GetAllCategory() []string {
+	var listOfCategory []string
+	row, err := db.Query("SELECT * FROM studybuddy")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer row.Close()
+	for row.Next() {
+
+		var cat string
+		row.Scan(&cat)
+		listOfCategory = append(listOfCategory, cat)
+	}
+	return listOfCategory
+}*/

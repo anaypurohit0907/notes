@@ -14,6 +14,8 @@ import (
 	"os"
 )
 
+//var availableCategories = data.GetAllCategory()
+
 type promptContent struct {
 	errorMsg string
 	label    string
@@ -29,9 +31,16 @@ var newCmd = &cobra.Command{
 	Use:   "new",
 	Short: "creates a new note.",
 	Long:  `Use this to add a new command to your memory.`,
-
+	//	ValidArgs: availableCategories,
 	Run: func(cmd *cobra.Command, args []string) {
-		createNewNote()
+		if NewEntry != "" {
+			fmt.Print("test")
+			data.InsertNote(NewEntry, NewDefinition, NewCategory)
+
+		} else {
+
+			createNewNote()
+		}
 	},
 }
 
