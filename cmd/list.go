@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var searchword string
+var searchword, searchwordCategory string
 
 // listCmd represents the list command
 var listCmd = &cobra.Command{
@@ -20,8 +20,10 @@ var listCmd = &cobra.Command{
 		if searchword != "" {
 			data.SearchAllNotes(searchword)
 
-		} else {
+		} else if searchwordCategory != "" {
 
+			data.SearchByCategory(searchwordCategory)
+		} else {
 			data.DisplayAllNotes()
 		}
 	},
@@ -29,7 +31,8 @@ var listCmd = &cobra.Command{
 
 func init() {
 	noteCmd.AddCommand(listCmd)
-	listCmd.Flags().StringVarP(&searchword, "Search", "s", "", "Search by definition")
+	listCmd.Flags().StringVarP(&searchword, "Search by definition", "d", "", "Search by definition")
+	listCmd.Flags().StringVarP(&searchwordCategory, "Search by category", "c", "", "Search by category")
 
 	// Here you will define your flags and configuration settings.
 

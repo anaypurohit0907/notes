@@ -4,7 +4,6 @@ a simple, lightweight command-line application to help you record, organize, and
 
 Available Commands: 
 
-  completion : Generate the autocompletion script for the specified shell
 
   help       : Help about any command
   
@@ -13,6 +12,7 @@ Available Commands:
   note     :   Note a command you just learned along with a small description of what it does .
             
   Note new : creates new note
+
   Note list : lists all notes
   
   Flags:
@@ -24,3 +24,14 @@ Available Commands:
    -d: definition of new note
    
    -s: use in list to search by a word in definition       
+
+usage: ./go-cli note -n "word" -c "category" -d "definition"
+
+search flags: 
+
+-c: search by category
+
+-d: search by definition 
+
+usage: ./go-cli note list -c or -d "search word "
+

@@ -87,6 +87,24 @@ func SearchAllNotes(word string) {
 	}
 
 }
+func SearchByCategory(word string) {
+	row, err := db.Query("SELECT * FROM studybuddy WHERE category LIKE '%" + word + "%'")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer row.Close()
+	for row.Next() {
+		var idNote int
+		var word string
+		var definition string
+		var category string
+		row.Scan(&idNote, &word, &definition, &category)
+		fmt.Println("[", category, "] : ", word, "—", definition)
+	}
+
+}
 
 /*func GetAllCategory() []string {
 	var listOfCategory []string
