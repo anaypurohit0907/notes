@@ -51,3 +51,4 @@ here's the roadmap I've come up with for now :
 
 
 this is as far as I have thought about this project, I don't know if this is the best route or the best way to do this but this is what I have come up with and I'll adapt and change as I grow and as needed. 
+also I want to make this a neovim plugin too, that's probably the last step. 
