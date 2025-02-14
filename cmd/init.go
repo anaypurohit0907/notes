@@ -5,7 +5,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"go-cli/data"
+	"notes/data"
 )
 
 // initCmd represents the init command

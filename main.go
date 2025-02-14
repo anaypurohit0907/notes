@@ -4,8 +4,8 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package main
 
 import (
-	"go-cli/cmd"
-	"go-cli/data"
+	"notes/cmd"
+	"notes/data"
 )
 
 func main() {

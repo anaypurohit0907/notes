@@ -6,7 +6,7 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"go-cli/data"
+	"notes/data"
 
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
@@ -133,7 +133,7 @@ func promptGetSelect(pc promptContent) string {
 }
 
 func init() {
-	noteCmd.AddCommand(newCmd)
+	rootCmd.AddCommand(newCmd)
 
 	newCmd.Flags().StringVarP(&NewEntry, "New", "n", "", "make a new entry enter name of note")
 	newCmd.Flags().StringVarP(&NewCategory, "Category", "c", "", "Category of note")
